@@ -14,13 +14,13 @@
 
 model:
   # paths
-  llama_path: "meta-llama/Llama-3.2-3B-Instruct"
+  llama_path: "lmsys/vicuna-7b-v1.5"
   whisper_path: "openai/whisper-large-v2"
   beats_path: "/data/baseline/BEATs_iter3_plus_AS2M_finetuned_on_AS2M_cpt2.pt"
 
   token: "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"  # Use hf token to access gated repositories
 
-  ckpt: "/data/baseline/salmonn_3b_nota.pth" #"model ckpt" # if not "", load model from ckpt for training or evaluation
+  ckpt: "" #"model ckpt" # if not "", load model from ckpt for training or evaluation
 
   freeze_whisper: True
   freeze_beats: True
@@ -36,27 +36,18 @@ model:
   speech_llama_proj_model: ""
   freeze_speech_llama_proj: False
 
-  # PEFT: LoRA
+  # LoRA
   lora: True
   lora_rank: 8
   lora_alpha: 32
   lora_dropout: 0.1
-
-  # # PEFT: Adapter
-  # adapter: True
-  #   adapter_config:
-  #   adapter_hidden_size: 64    # adapter의 중간 레이어 크기
-  #   adapter_size: 256         # adapter의 크기
-  #   dropout: 0.1             # dropout 비율
-  #   non_linearity: "relu"    # 활성화 함수
-
 
   multi_prompt: True
   prompt_template: "USER: {}\nASSISTANT:"
   prompt_path: "prompts/train_prompt.json"
   test_prompt_path: "prompts/test_prompt.json"
   max_txt_len: 300
-  end_sym: "<|end_of_text|>"
+  end_sym: "<|end_of_text|>"   # TODO: change eos token
 
 datasets:
   prefix: "/data/data"
@@ -68,8 +59,8 @@ run:
   # log & settings
   seed: 42
   output_dir: "outputs_stage1_only"
-  evaluate: False # 학습모드-평가모드 switch on&off
-  exp_name: "Llama-3.2-3B-stage1"
+  evaluate: False # if True, only evaluate model on test data
+  exp_name: "viccuna7B-stage1"
 
   log_freq: 5
   epoch_based: False
@@ -80,10 +71,10 @@ run:
   num_workers: 8
 
   device: "cuda"
-  use_distributed: True  # 분산 학습 활성화 여부
+  use_distributed: True
   amp: True
-  world_size: 2   # 사용할 GPU 갯수
-  dist_url: "env://"  # GPU 간 통신 방법
+  world_size: 2
+  dist_url: "env://"
 
   # optimizer & scheduler
   optims:

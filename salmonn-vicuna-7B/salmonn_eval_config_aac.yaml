@@ -21,7 +21,7 @@ model:
   token: "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"
   only_preprocessor: False
 
-  ckpt: "/data/KJPark/audiolm-evaluator/audiolm-trainer/outputs_stage2/202501312009/checkpoint_best.pth"
+  ckpt: "/data/KJPark/level4-recsys-finalproject-hackathon-recsys-08-lv3/salmonn-vicuna-7B/trainer/outputs_stage1_only/202502051721/checkpoint_best.pth"
 
   freeze_whisper: True
   freeze_beats: True
@@ -45,10 +45,10 @@ model:
 
   multi_prompt: True
   prompt_template: "USER: {}\nASSISTANT:"
-  prompt_path: "audiolm-trainer/prompts/train_prompt.json"
-  test_prompt_path: "audiolm-trainer/prompts/test_prompt.json"
+  prompt_path: "trainer/prompts/train_prompt.json"
+  test_prompt_path: "trainer/prompts/test_prompt.json"
   max_txt_len: 300
-  end_sym: "<|end_of_text|>"
+  end_sym: "</s>"
 
 generate:
   max_new_tokens: 200

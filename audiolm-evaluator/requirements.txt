@@ -17,3 +17,4 @@ librosa==0.10.2.post1
 flash_attn==2.7.4.post1
 bitsandbytes == 0.45.0
 aac-metrics ==0.5.4
+autoawq ==0.2.8

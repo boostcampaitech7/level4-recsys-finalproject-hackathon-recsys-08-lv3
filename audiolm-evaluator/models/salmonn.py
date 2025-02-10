@@ -24,7 +24,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 from transformers import StoppingCriteriaList, AutoTokenizer, AutoModelForCausalLM, AutoConfig, BitsAndBytesConfig, WhisperModel
 from peft import LoraConfig, TaskType, get_peft_model
-from awq import AutoAWQForCausalLM
 
 from .Qformer import BertConfig, BertLMHeadModel
 from .modeling_llama import LlamaForCausalLM

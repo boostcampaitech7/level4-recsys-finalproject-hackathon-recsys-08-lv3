@@ -17,11 +17,14 @@ model:
   llama_path: "meta-llama/Llama-3.2-3B-Instruct"
   whisper_path: "openai/whisper-large-v2"
   beats_path: "/data/baseline/BEATs_iter3_plus_AS2M_finetuned_on_AS2M_cpt2.pt"
+  prune : True
+  whisper_lora : True
+  low_resource : True
 
   token: "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" # Use hf token to access gated repositories
   only_preprocessor: False
 
-  ckpt: "/data/baseline/salmonn_3b_nota.pth" # model used for decoding
+  ckpt: "salmonn_pruned_6.pth" # model used for decoding
 
   freeze_whisper: True
   freeze_beats: True
@@ -48,7 +51,7 @@ model:
   prompt_path: "audiolm-trainer/prompts/train_prompt.json"
   test_prompt_path: "audiolm-trainer/prompts/test_prompt.json"
   max_txt_len: 300
-  end_sym: "<|end_of_text|>"
+  end_sym: "</s>"
 
 generate:
   max_new_tokens: 200
@@ -59,7 +62,7 @@ generate:
   top_p: 0.9
   repetition_penalty: 1.0
   length_penalty: 1.0
-  end_sym: "<|end_of_text|>"
+  end_sym: "</s>"
 
 datasets:
   prefix: "/data/data"

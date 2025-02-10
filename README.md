@@ -1,5 +1,5 @@
-# NOTA-09 Team SALMONN Model
-Audio Language Model Evaluator
+# TEAM NOTA-09 SALMONN Model
+Audio Language Model
 
 ## Install dependencies
 ```bash

@@ -7,6 +7,12 @@ git clone  https://github.com/boostcampaitech7/level4-recsys-finalproject-hackat
 pip install -r requirements.txt
 ```
 
+## Evaluate
+`inference_config.yaml` 에서 데이터셋 경로, 모델 경로 등을 적절히 수정한 후 아래 스크립트를 실행합니다.
+```python
+python evaluate_salmonn.py --cfg-path cfg_path  --mode {submission_asr, submission_aac}
+```
+
 # Model Structure
 
 ![Model Structure](./img/structure.png)
@@ -20,14 +26,3 @@ pip install -r requirements.txt
 - **Optimizations**:
   - Integrated Flash Attention.
   - Used LoRA adaptors for fine-tuning.
-
-## Evaluate
-`inference_config.yaml` 에서 데이터셋 경로, 모델 경로 등을 적절히 수정한 후 아래 스크립트를 실행합니다.
-```python
-python evaluate_salmonn.py --cfg-path cfg_path  --mode {submission_asr, submission_aac}
-```
-
-위 파일을 실행하면 기본적으로 `submission.csv`가 생성됩니다.
-
-```
-

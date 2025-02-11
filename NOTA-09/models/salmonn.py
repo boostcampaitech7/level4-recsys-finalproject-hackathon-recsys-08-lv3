@@ -215,7 +215,6 @@ class SALMONN(nn.Module):
                         target_modules=["q_proj", "v_proj", "o_proj"],  # Apply LoRA to attention layers
                     )
             self.speech_encoder=get_peft_model(self.speech_encoder, self.whisper_lora_config)
-            print(self.speech_encoder)
             logging.info('Whisper LoRA Training')
         
         if self.beats_path: 
@@ -631,4 +630,7 @@ class SALMONN(nn.Module):
                 layer_to_prune=ckpt['whisper_prune']
                 model.apply_whisper_prune(layer_to_prune)
             model.load_state_dict(ckpt['model'], strict=False)
+        
+        print(model.llama_model)
+        print(model.speech_encoder)
         return model

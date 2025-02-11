@@ -48,8 +48,8 @@ model:
 
   multi_prompt: True
   prompt_template: "USER: {}\nASSISTANT:"
-  prompt_path: "audiolm-trainer/prompts/train_prompt.json"
-  test_prompt_path: "audiolm-trainer/prompts/test_prompt.json"
+  prompt_path: "prompts/train_prompt.json"
+  test_prompt_path: "prompts/test_prompt.json"
   max_txt_len: 300
   end_sym: "</s>"
 

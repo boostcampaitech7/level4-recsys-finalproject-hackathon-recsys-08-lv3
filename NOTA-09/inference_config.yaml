@@ -43,7 +43,7 @@ model:
   # LoRA
   lora: True
   lora_rank: 8
-  lora_alpha: 32
+  lora_alpha: 48
   lora_dropout: 0.1
 
   multi_prompt: True

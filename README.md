@@ -33,3 +33,16 @@ python inference_salmonn.py --cfg-path inference_config.yaml --mode {submission_
   - Used LoRA adaptors for fine-tuning.
 
 ![Model Structure](./img/whisper.png)
+<br/>
+
+# Results
+
+| Model                  | Memory Usage | Latency | ASR |
+|------------------------|--------------|---------|-----|
+| Llama-3B              | 9.1GB        | 0.252   |  0.0641   |
+| Compression One (Ours) | 5.87GB       | 0.198   | 0.073   |
+
+
+
+
+<br/>

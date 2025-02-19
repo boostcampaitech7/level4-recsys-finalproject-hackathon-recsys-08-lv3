@@ -1,5 +1,10 @@
 # TEAM NOTA-09 SALMONN Model
-Audio Language Model
+
+## Team
+
+| icon | <img src="./img/user_icon_1.webp" alt="user_icon_1" style="zoom:100%;" /> | <img src="./img/user_icon_2.webp" alt="user_icon_2" style="zoom:100%;" /> | <img src="./img/user_icon_3.webp" alt="user_icon_3" style="zoom:100%;" /> | <img src="./img/user_icon_4.webp" alt="user_icon_4" style="zoom:100%;" /> | <img src="./img/user_icon_5.webp" alt="user_icon_5" style="zoom:100%;" /> | <img src="./img/user_icon_6.webp" alt="user_icon_6" style="zoom:100%;" /> |
+| :--: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
+| 이름 |                            한선우                            |                            신승훈                            |                            이경민                            |                            김민준                            |                            박광진                            |                            김영찬                            |
 
 ## Install dependencies
 ```bash
